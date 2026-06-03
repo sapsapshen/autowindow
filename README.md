@@ -5,6 +5,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+**MIT licensed · AI-powered Chrome extension for page-aware chatting**
+
 > Browse any page, hit a shortcut — the AI has already read everything on it.
 
 ---
@@ -61,13 +63,15 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+**MIT 协议开源 · 面向网页上下文的 AI Chrome 扩展**
+
 > 浏览任何网页，按下快捷键，AI 已读完整篇内容在等你。
 
 ---
 
 ## 它能做什么
 
-每打开一个网页，AutoWindow AI 就自动把页面内容读完。想了解核心观点？想翻译某段外文？想让 AI 帮你总结、改写、对比——直接问就行。不需要复制粘贴，也不需要手动整理上下文。
+每打开一个网页，AutoWindow AI 就会自动读取整页内容。想快速了解核心观点？想翻译外文内容？想让 AI 帮你总结、改写、对比？直接提问就行。不需要复制粘贴，也不需要手动整理上下文。
 
 ## 三步开始
 
@@ -106,6 +110,6 @@ Chrome 地址栏输入 `chrome://extensions/` → 开启开发者模式 → 加�
 
 ---
 
-<p align="center"><sub>安装 · 填 Key · 浏览 · 对话 — 四步，AI 就位。</sub></p>
+<p align="center"><sub>安装 · 填 Key · 浏览 · 对话 — AI 随页而至。</sub></p>
 
 </details>
