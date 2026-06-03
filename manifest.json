@@ -3,6 +3,7 @@
   "name": "AutoWindow AI",
   "version": "1.0.0",
   "description": "在每个页面底部显示 AI 对话组件，对话上下文自动包含当前页面内容。默认使用 DeepSeek API。",
+  "license": "MIT",
   "permissions": [
     "storage",
     "activeTab",

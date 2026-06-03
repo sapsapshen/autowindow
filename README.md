@@ -3,13 +3,15 @@
 
 # ☁️ AutoWindow AI
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 > Browse any page, hit a shortcut — the AI has already read everything on it.
 
 ---
 
 ## What it does
 
-Every time you open a webpage, AutoWindow AI reads the entire content automatically. Want the key takeaways? Need a translation? Ask the AI to summarize, rewrite, or compare — no copy-paste, no tab switching. **AI sits right at the bottom of your page.**
+Every time you open a webpage, AutoWindow AI reads the entire content automatically. Want the key takeaways? Need a translation? Ask the AI to summarize, rewrite, or compare — no copy-paste, no context switching.
 
 ## Get started in three steps
 
@@ -42,6 +44,10 @@ Powered by DeepSeek V4 series. Pro for deep reasoning, Flash for instant respons
 
 Apple-inspired frosted glass panel, semi-transparent, floating at the bottom of the page. Stays out of your way, collapses to a tiny dot when idle.
 
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
 ---
 
 <p align="center"><sub>Install · Add Key · Browse · Chat — AI at your fingertips.</sub></p>
@@ -53,13 +59,15 @@ Apple-inspired frosted glass panel, semi-transparent, floating at the bottom of 
 
 # ☁️ AutoWindow AI
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 > 浏览任何网页，按下快捷键，AI 已读完整篇内容在等你。
 
 ---
 
 ## 它能做什么
 
-每打开一个网页，AutoWindow AI 就自动把页面内容读完。想了解核心观点？想翻译某段外文？想让 AI 帮你总结、改写、对比——直接问就行。不需要复制粘贴，不需要切换窗口。**AI 就在页面底部。**
+每打开一个网页，AutoWindow AI 就自动把页面内容读完。想了解核心观点？想翻译某段外文？想让 AI 帮你总结、改写、对比——直接问就行。不需要复制粘贴，也不需要手动整理上下文。
 
 ## 三步开始
 
@@ -91,6 +99,10 @@ Chrome 地址栏输入 `chrome://extensions/` → 开启开发者模式 → 加�
 ## 界面
 
 苹果风格磨砂玻璃面板，半透明浮在页面底部。不遮挡核心内容，不用时折叠为一个小圆点。
+
+## 开源协议
+
+本项目采用 MIT License。详情请见 [LICENSE](LICENSE) 文件。
 
 ---
 
