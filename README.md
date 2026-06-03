@@ -1,3 +1,56 @@
+<details open>
+<summary><b>🇬🇧 English</b></summary>
+
+# ☁️ AutoWindow AI
+
+> Browse any page, hit a shortcut — the AI has already read everything on it.
+
+---
+
+## What it does
+
+Every time you open a webpage, AutoWindow AI reads the entire content automatically. Want the key takeaways? Need a translation? Ask the AI to summarize, rewrite, or compare — no copy-paste, no tab switching. **AI sits right at the bottom of your page.**
+
+## Get started in three steps
+
+**1. Install**
+
+Go to `chrome://extensions/` → enable Developer Mode → Load unpacked → select the project folder.
+
+**2. Add your API key**
+
+Click the AutoWindow icon in the toolbar → Settings → paste your DeepSeek API Key → Save.
+
+**3. Start chatting**
+
+Open any webpage, press `Ctrl + Shift + K`, or click the floating button at the bottom-right corner.
+
+## What it feels like
+
+- 📖 Land on a research paper, type "summarize the key findings" — results in seconds
+- 🌐 Reading technical docs, ask "what's wrong with this code" — the AI has context
+- 📰 Browsing news, ask "what's the opposing view" — it breaks it down for you
+- ✍️ Drafting an email, ask the AI to polish the wording — done inline
+
+**You ask. It has already read the page.**
+
+## Built-in models
+
+Powered by DeepSeek V4 series. Pro for deep reasoning, Flash for instant responses. Switch models at the bottom-left corner of the dialog, or add more compatible models in Settings.
+
+## Interface
+
+Apple-inspired frosted glass panel, semi-transparent, floating at the bottom of the page. Stays out of your way, collapses to a tiny dot when idle.
+
+---
+
+<p align="center"><sub>Install · Add Key · Browse · Chat — AI at your fingertips.</sub></p>
+
+</details>
+
+<details>
+<summary><b>🇨🇳 中文</b></summary>
+
 # ☁️ AutoWindow AI
 
 > 浏览任何网页，按下快捷键，AI 已读完整篇内容在等你。
@@ -6,15 +59,13 @@
 
 ## 它能做什么
 
-每打开一个网页，AutoWindow AI 就自动把页面内容读完。想了解这篇文章的核心观点？想翻译某段外文？想让 AI 帮你总结、改写、对比——直接问就行。
-
-不需要复制粘贴，不需要切换窗口。**AI 就在页面底部。**
+每打开一个网页，AutoWindow AI 就自动把页面内容读完。想了解核心观点？想翻译某段外文？想让 AI 帮你总结、改写、对比——直接问就行。不需要复制粘贴，不需要切换窗口。**AI 就在页面底部。**
 
 ## 三步开始
 
 **1. 安装插件**
 
-Chrome 地址栏输入 `chrome://extensions/` → 开启「开发者模式」→ 加载已解压的扩展程序 → 选择本项目文件夹。
+Chrome 地址栏输入 `chrome://extensions/` → 开启开发者模式 → 加载已解压的扩展程序 → 选择本项目文件夹。
 
 **2. 填入 Key**
 
@@ -22,7 +73,7 @@ Chrome 地址栏输入 `chrome://extensions/` → 开启「开发者模式」→
 
 **3. 开始对话**
 
-打开任意网页，`Ctrl + Shift + K` 呼出对话框，或者页面底部的浮动按钮一键展开。
+打开任意网页，`Ctrl + Shift + K` 呼出对话框，或者点击页面右下角的浮动按钮。
 
 ## 用起来是什么感觉
 
@@ -44,3 +95,5 @@ Chrome 地址栏输入 `chrome://extensions/` → 开启「开发者模式」→
 ---
 
 <p align="center"><sub>安装 · 填 Key · 浏览 · 对话 — 四步，AI 就位。</sub></p>
+
+</details>
