@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoWindow AI — 设置</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      font-size: 14px;
+      color: #e2e8f0;
+      background: #0f172a;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 32px 24px;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .subtitle {
+      color: #64748b;
+      margin-bottom: 32px;
+      font-size: 14px;
+    }
+
+    /* 分区 */
+    .section {
+      background: #1a1a2e;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* 表单 */
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group:last-child {
+      margin-bottom: 0;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: #94a3b8;
+      margin-bottom: 6px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="number"],
+    textarea,
+    select {
+      width: 100%;
+      background: #0f0f23;
+      border: 1px solid #334155;
+      color: #e2e8f0;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: #3b82f6;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+      line-height: 1.5;
+    }
+
+    .help-text {
+      font-size: 12px;
+      color: #64748b;
+      margin-top: 4px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 12px;
+    }
+
+    .form-row > * {
+      flex: 1;
+    }
+
+    /* 按钮 */
+    .btn-primary {
+      background: #3b82f6;
+      border: none;
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.15s;
+    }
+
+    .btn-primary:hover {
+      background: #2563eb;
+    }
+
+    .btn-danger {
+      background: transparent;
+      border: 1px solid #ef4444;
+      color: #ef4444;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.15s;
+    }
+
+    .btn-danger:hover {
+      background: rgba(239, 68, 68, 0.1);
+    }
+
+    .btn-sm {
+      background: #16213e;
+      border: 1px solid #334155;
+      color: #e2e8f0;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.15s;
+    }
+
+    .btn-sm:hover {
+      background: #1e293b;
+    }
+
+    /* 模型列表 */
+    .model-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .model-item:last-child {
+      border-bottom: none;
+    }
+
+    .model-item input {
+      flex: 1;
+      background: #0f0f23;
+      border: 1px solid #334155;
+      color: #e2e8f0;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-family: inherit;
+      outline: none;
+    }
+
+    .model-item input:focus {
+      border-color: #3b82f6;
+    }
+
+    .model-item input.model-id {
+      flex: 2;
+    }
+
+    .model-item input.model-name {
+      flex: 2;
+    }
+
+    .model-item input.model-provider {
+      flex: 1;
+    }
+
+    #model-list-header {
+      display: flex;
+      gap: 10px;
+      font-size: 11px;
+      color: #64748b;
+      padding-bottom: 6px;
+      margin-bottom: 4px;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    #model-list-header span:nth-child(1) { flex: 2; }
+    #model-list-header span:nth-child(2) { flex: 2; }
+    #model-list-header span:nth-child(3) { flex: 1; }
+
+    .add-model-row {
+      margin-top: 12px;
+    }
+
+    /* 保存提示 */
+    #save-toast {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #22c55e;
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 14px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    #save-toast.show {
+      opacity: 1;
+    }
+
+    /* 危险区域 */
+    .danger-zone {
+      border-color: #7f1d1d;
+    }
+
+    .danger-zone .section-title {
+      color: #ef4444;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>AutoWindow AI</h1>
+    <p class="subtitle">配置 AI 对话组件的 API 和模型选项</p>
+
+    <!-- API 配置 -->
+    <div class="section">
+      <div class="section-title">API 配置</div>
+
+      <div class="form-group">
+        <label for="api-key">API Key</label>
+        <input type="password" id="api-key" placeholder="sk-xxxxxxxxxxxxxxxxxxxxxxxx"
+          autocomplete="off">
+        <div class="help-text">你的 DeepSeek API Key。从 <a href="https://platform.deepseek.com/api_keys" target="_blank" style="color:#3b82f6;">platform.deepseek.com</a> 获取（也支持 OpenAI 兼容的 API Key）。</div>
+      </div>
+
+      <div class="form-group">
+        <label for="api-base-url">API Base URL</label>
+        <input type="text" id="api-base-url" placeholder="https://api.deepseek.com/v1">
+        <div class="help-text">OpenAI 兼容 API 地址。DeepSeek 默认: https://api.deepseek.com/v1</div>
+      </div>
+    </div>
+
+    <!-- 模型管理 -->
+    <div class="section">
+      <div class="section-title">模型列表</div>
+      <div id="model-list-header">
+        <span>模型 ID</span>
+        <span>显示名称</span>
+        <span>提供商</span>
+        <span></span>
+      </div>
+      <div id="model-list"></div>
+      <div class="add-model-row">
+        <button class="btn-sm" id="btn-add-model">+ 添加模型</button>
+      </div>
+    </div>
+
+    <!-- 对话设置 -->
+    <div class="section">
+      <div class="section-title">对话设置</div>
+
+      <div class="form-group">
+        <label for="system-prompt">系统提示词</label>
+        <textarea id="system-prompt" rows="3"
+          placeholder="你是一个有用的 AI 助手..."></textarea>
+        <div class="help-text">每次对话开始时自动发送给 AI 的提示词。</div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="temperature">Temperature</label>
+          <input type="number" id="temperature" min="0" max="2" step="0.1" value="0.7">
+          <div class="help-text">0 = 精确，2 = 随机（默认 0.7）</div>
+        </div>
+        <div class="form-group">
+          <label for="max-tokens">Max Tokens</label>
+          <input type="number" id="max-tokens" min="256" max="32768" step="256" value="4096">
+          <div class="help-text">单次回复最大 token 数</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 操作 -->
+    <div style="display:flex; gap:12px; margin-bottom:20px;">
+      <button class="btn-primary" id="btn-save">保存设置</button>
+      <button class="btn-sm" id="btn-reset">恢复默认</button>
+    </div>
+
+    <!-- 危险区域 -->
+    <div class="section danger-zone">
+      <div class="section-title">危险区域</div>
+      <button class="btn-danger" id="btn-clear-all">清除所有数据和设置</button>
+      <div class="help-text" style="margin-top:8px;">这将删除 API Key、模型列表和所有自定义设置。</div>
+    </div>
+  </div>
+
+  <div id="save-toast">✅ 设置已保存</div>
+
+  <script src="options.js"></script>
+</body>
+</html>

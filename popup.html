@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoWindow AI</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div id="popup">
+    <!-- 头部 -->
+    <div id="header">
+      <span class="logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></span>
+      <span class="title">AutoWindow AI</span>
+    </div>
+
+    <!-- 开关 -->
+    <div id="toggle-row">
+      <span>启用状态</span>
+      <label class="switch">
+        <input type="checkbox" id="toggle-enabled">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <!-- 状态指示 -->
+    <div id="status-bar">
+      <span id="status-dot" class="dot"></span>
+      <span id="status-text">正在加载...</span>
+    </div>
+
+    <!-- 当前模型 -->
+    <div id="model-row">
+      <span class="label">当前模型</span>
+      <span id="current-model">—</span>
+    </div>
+
+    <!-- 快捷切换 -->
+    <div id="quick-switch">
+      <span class="label">快捷切换</span>
+      <select id="model-select">
+        <option value="">加载中...</option>
+      </select>
+    </div>
+
+    <!-- 操作区 -->
+    <div id="actions">
+      <button id="btn-options" class="btn-secondary">完整设置</button>
+      <button id="btn-clear" class="btn-secondary">清除对话</button>
+    </div>
+
+    <!-- 页脚 -->
+    <div id="footer">
+      <span class="shortcut-hint">Ctrl+Shift+K 切换对话框</span>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
