@@ -244,6 +244,28 @@
       opacity: 1;
     }
 
+    #save-toast.error {
+      background: #ef4444;
+    }
+
+    .help-text a {
+      color: #3b82f6;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #e2e8f0;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .checkbox-label input {
+      width: 16px;
+      height: 16px;
+    }
+
     /* 危险区域 */
     .danger-zone {
       border-color: #7f1d1d;
@@ -267,13 +289,13 @@
         <label for="api-key">API Key</label>
         <input type="password" id="api-key" placeholder="sk-xxxxxxxxxxxxxxxxxxxxxxxx"
           autocomplete="off">
-        <div class="help-text">你的 DeepSeek API Key。从 <a href="https://platform.deepseek.com/api_keys" target="_blank" style="color:#3b82f6;">platform.deepseek.com</a> 获取（也支持 OpenAI 兼容的 API Key）。</div>
+        <div class="help-text">DeepSeek API Key，从 <a href="https://platform.deepseek.com/api_keys" target="_blank" rel="noopener noreferrer">platform.deepseek.com</a> 获取。也支持其他 OpenAI 兼容服务的 Key。Key 保存在 Chrome 同步存储中。</div>
       </div>
 
       <div class="form-group">
         <label for="api-base-url">API Base URL</label>
-        <input type="text" id="api-base-url" placeholder="https://api.deepseek.com/v1">
-        <div class="help-text">OpenAI 兼容 API 地址。DeepSeek 默认: https://api.deepseek.com/v1</div>
+        <input type="text" id="api-base-url" placeholder="https://api.deepseek.com" spellcheck="false">
+        <div class="help-text">OpenAI 兼容地址，不要带 /chat/completions。DeepSeek 当前为 https://api.deepseek.com。保存非内置地址时，浏览器会询问该站点权限。本机 HTTP 仅允许 localhost。</div>
       </div>
     </div>
 
@@ -288,7 +310,8 @@
       </div>
       <div id="model-list"></div>
       <div class="add-model-row">
-        <button class="btn-sm" id="btn-add-model">+ 添加模型</button>
+        <button class="btn-sm" id="btn-add-model" type="button">+ 添加模型</button>
+        <div class="help-text">DeepSeek 当前模型 ID：deepseek-v4-pro、deepseek-flash（V4.1 Flash）。旧 ID deepseek-v4-flash 会在读取时自动迁移。</div>
       </div>
     </div>
 
@@ -311,28 +334,44 @@
         </div>
         <div class="form-group">
           <label for="max-tokens">Max Tokens</label>
-          <input type="number" id="max-tokens" min="256" max="32768" step="256" value="4096">
-          <div class="help-text">单次回复最大 token 数</div>
+          <input type="number" id="max-tokens" min="256" max="384000" step="256" value="4096">
+          <div class="help-text">单次回复最大 token 数（256–384000）</div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="max-history">历史消息条数</label>
+          <input type="number" id="max-history" min="1" max="100" step="1" value="20">
+          <div class="help-text">发给模型的最近对话条数，不含系统提示和页面内容</div>
+        </div>
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="thinking">
+            启用思考模式
+          </label>
+          <div class="help-text">仅对 DeepSeek 生效。关闭时显式发送 thinking: disabled，回复更快。需要深度推理时再打开。</div>
         </div>
       </div>
     </div>
 
     <!-- 操作 -->
     <div style="display:flex; gap:12px; margin-bottom:20px;">
-      <button class="btn-primary" id="btn-save">保存设置</button>
-      <button class="btn-sm" id="btn-reset">恢复默认</button>
+      <button class="btn-primary" id="btn-save" type="button">保存设置</button>
+      <button class="btn-sm" id="btn-reset" type="button">恢复默认</button>
     </div>
 
     <!-- 危险区域 -->
     <div class="section danger-zone">
       <div class="section-title">危险区域</div>
-      <button class="btn-danger" id="btn-clear-all">清除所有数据和设置</button>
+      <button class="btn-danger" id="btn-clear-all" type="button">清除所有数据和设置</button>
       <div class="help-text" style="margin-top:8px;">这将删除 API Key、模型列表和所有自定义设置。</div>
     </div>
   </div>
 
-  <div id="save-toast">✅ 设置已保存</div>
+  <div id="save-toast" role="status" aria-live="polite">设置已保存</div>
 
+  <script src="utils/config.js"></script>
   <script src="options.js"></script>
 </body>
 </html>

@@ -244,6 +244,24 @@
   opacity: 0.8;
 }
 
+.aw-reasoning {
+  margin-bottom: 8px;
+  color: var(--aw-text-secondary);
+  font-size: 12px;
+}
+
+.aw-reasoning summary {
+  cursor: pointer;
+  user-select: none;
+}
+
+.aw-reasoning-body {
+  margin-top: 6px;
+  white-space: pre-wrap;
+  max-height: 160px;
+  overflow: auto;
+}
+
 /* 加载动画 */
 .aw-loading {
   display: flex;
@@ -430,6 +448,11 @@
   box-shadow: none;
 }
 
+#aw-send-btn.aw-stop {
+  background: #ff3b30;
+  box-shadow: 0 2px 8px rgba(255, 59, 48, 0.3);
+}
+
 /* ---- 浮动按钮（折叠状态） ---- */
 #aw-float-btn {
   display: none;
@@ -448,11 +471,14 @@
   font-size: 22px;
   cursor: pointer;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10), 0 1px 4px rgba(0, 0, 0, 0.06);
-  transition: transform 0.25s cubic-bezier(0.25, 0.1, 0.25, 1), 
+  transition: transform 0.25s cubic-bezier(0.25, 0.1, 0.25, 1),
               box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
-  display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#aw-float-btn.aw-visible {
+  display: flex;
 }
 
 #aw-float-btn:hover {
@@ -476,6 +502,7 @@
   cursor: ns-resize;
   z-index: 1;
   background: transparent;
+  touch-action: none;
 }
 
 /* ---- 响应式：窄屏幕适配 ---- */
